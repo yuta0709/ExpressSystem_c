@@ -6,6 +6,7 @@ APPL_COBJS += \
 	CarryremindController.o \
 	CollectturnController.o \
 	DeliveryController.o \
+	DropbuggageController.o \
 	LineDriveController.o \
 	ButtonUnit.o \
 	DisplayUnit.o \

@@ -17,6 +17,7 @@
 #include "CarryremindController.h"
 #include "CollectturnController.h"
 #include "DeliveryController.h"
+#include "DropbuggageController.h"
 
 // èÛë‘ïœêîÇÃíËã`
 enum AC_STATUS cur_state = AC_STATUS_NO;
@@ -71,6 +72,7 @@ void AC_controllAction(void) {
             DLC_action();
             break;
         case AC_STATUS_DROPBUGGAGE:
+            DBC_action();
             break;
         case AC_STATUS_UNLOADWAIT:
             break;
