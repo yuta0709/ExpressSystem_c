@@ -1,14 +1,19 @@
 /*
  * RequestwaitController.c
  * 収集指示待機状態の制御クラス
+ *
+ * クラス名: RequestwaitController(RWC)
+ * 属性: なし
+ * 操作: action
+ * 関連: ActionController(AC), ButtonUnit(BU), common
  */
 
 #include "RequestwaitController.h"
 
 // 内部関数のプロトタイプ宣言
-static void act_requestwait_ent(void);
-static void act_requestwait_do(void);
-static void act_requestwait_ext(void);
+static void RWC_entry(void);
+static void RWC_do(void);
+static void RWC_exit(void);
 
 // ボタンの前回の状態を保持
 static int prev_button_state = FALSE;
@@ -16,14 +21,14 @@ static int prev_button_state = FALSE;
 /**
  * 収集指示待機状態の制御
  */
-void requestwait_action(void) {
+void RWC_action(void) {
     // entry処理（状態が変化した時のみ実行）
     if (pre_state != AC_STATUS_REQUESTWAIT) {
-        act_requestwait_ent();
+        RWC_entry();
     }
 
     // do処理（毎回実行）
-    act_requestwait_do();
+    RWC_do();
 
     // 現在のボタンの状態を取得
     int current_button_state = BU_isPushed();
@@ -39,14 +44,14 @@ void requestwait_action(void) {
     prev_button_state = current_button_state;
 
     if(pre_state != cur_state){
-        act_requestwait_ext();
+        RWC_exit();
     }
 }
 
 /**
  * 収集指示待機状態のentry処理
  */
-static void act_requestwait_ent(void) {
+static void RWC_entry(void) {
     // ボタンの状態を初期化
     prev_button_state = FALSE;
 }
@@ -54,13 +59,13 @@ static void act_requestwait_ent(void) {
 /**
  * 収集指示待機状態のdo処理
  */
-static void act_requestwait_do(void) {
+static void RWC_do(void) {
     // 特に処理なし
 }
 
 /**
  * 収集指示待機状態のexit処理
  */
-static void act_requestwait_ext(void) {
+static void RWC_exit(void) {
     // 特に処理なし
 } 

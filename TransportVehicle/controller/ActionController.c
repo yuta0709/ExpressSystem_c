@@ -81,7 +81,7 @@ void AC_controllAction(void) {
         case AC_STATUS_NO:
             break;
         case AC_STATUS_REQUESTWAIT:
-            requestwait_action();
+            RWC_action();
             break;
         case AC_STATUS_COLLECTMOVE:
             break;
