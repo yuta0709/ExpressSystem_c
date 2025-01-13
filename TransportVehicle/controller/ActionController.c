@@ -13,6 +13,7 @@
 
 #include "ActionController.h"
 #include "RequestwaitController.h"
+#include "CollectmoveController.h"
 
 //**************************************
 //必要に応じて以下にプログラムを記述する
@@ -84,6 +85,7 @@ void AC_controllAction(void) {
             RWC_action();
             break;
         case AC_STATUS_COLLECTMOVE:
+            CMC_action();
             break;
         case AC_STATUS_CARRYWAIT:
             break;
