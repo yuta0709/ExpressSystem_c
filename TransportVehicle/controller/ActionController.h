@@ -1,12 +1,12 @@
 /*
  * COPYRIGHT(c)2017 Afrel Co., Ltd.
  * ActionController.h
- * s“®§ŒäƒNƒ‰ƒX
+ * è¡Œå‹•åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
  *
- * ƒNƒ‰ƒX–¼: ActionController(AC)
- * ‘®«:
- * ‘€ì:
- * ŠÖ˜A: LineDriveController(LDC), DeliveryController(DU), LuggageCarrierUnit(LCU),
+ * ã‚¯ãƒ©ã‚¹å: ActionController(AC)
+ * å±æ€§:
+ * æ“ä½œ:
+ * é–¢é€£: LineDriveController(LDC), DeliveryController(DU), LuggageCarrierUnit(LCU),
  *       BumperUnit(BU), DisplayUnit(DU), WallMonitorUnit(WMU), HornUnit(HU), TimerUnit(TU),
  *       common
  */
@@ -27,9 +27,10 @@
 #include "../unit/HornUnit.h"
 #include "../unit/TimerUnit.h"
 
-// ó‘Ô‚ğ•\‚·enumŒ^‚Ì’è‹`
+// çŠ¶æ…‹ã‚’è¡¨ã™enumå‹ã®å®šç¾©
 enum AC_STATUS {
-    AC_STATUS_REQUESTWAIT,         
+    AC_STATUS_NO,              // æœªå®šç¾©çŠ¶æ…‹
+    AC_STATUS_REQUESTWAIT,     // åé›†æŒ‡ç¤ºå¾…æ©Ÿ
     AC_STATUS_COLLECTMOVE,
     AC_STATUS_CARRYWAIT,
     AC_STATUS_CARRYREMIND,
@@ -42,21 +43,22 @@ enum AC_STATUS {
     AC_STATUS_RETURN,
 };
 
-// ó‘Ô‚ğ•ÏX‚·‚é‚½‚ß‚ÌŠÖ”
-extern void AC_changeStatus(enum AC_STATUS newStatus);
+// çŠ¶æ…‹å¤‰æ•°ã®å¤–éƒ¨å®£è¨€
+extern enum AC_STATUS cur_state;
+extern enum AC_STATUS pre_state;
 
 /*
- * s“®§Œä‚Ì‰Šú‰»ˆ—
+ * è¡Œå‹•åˆ¶å¾¡ã®åˆæœŸåŒ–å‡¦ç†
  */
 extern void AC_pre(void);
 
 /*
- * s“®§Œä‚ÌI—¹ˆ—
+ * è¡Œå‹•åˆ¶å¾¡ã®çµ‚äº†å‡¦ç†
  */
 extern void AC_post(void);
 
 /**
- * s“®§Œä
+ * è¡Œå‹•åˆ¶å¾¡
  */
 extern void AC_controllAction(void);
 
