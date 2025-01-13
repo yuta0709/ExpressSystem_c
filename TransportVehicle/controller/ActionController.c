@@ -16,7 +16,7 @@
 #include "CollectmoveController.h"
 #include "CarrywaitController.h"
 #include "CarryremindController.h"
-
+#include "CollectturnController.h"
 //**************************************
 //必要に応じて以下にプログラムを記述する
 //ここから
@@ -96,6 +96,7 @@ void AC_controllAction(void) {
             CRC_action();
             break;
         case AC_STATUS_COLLECTTURN:
+            CTC_action();
             break;
         case AC_STATUS_DERIVER:
             break;
