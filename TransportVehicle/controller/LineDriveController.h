@@ -6,7 +6,7 @@
  * クラス名: LineDriveController(LDC)
  * 属性: なし
  * 操作:
- * 関連: LineMonitorUnit(LMU), MotorUnit(MU), common
+ * 関連: LineMonitorUnit(LMU), MotorUnit(MU), SideMonitorUnit(SMU), common
  */
 
 #ifndef __LineDriveController_h__
@@ -18,17 +18,9 @@
 #include "../unit/LineMonitorUnit.h"
 #include "../unit/MotorUnit.h"
 
-//**************************************
-//必要に応じて以下にプログラムを記述する
-//ここから
-//**************************************
-
-
-
-
-
-//**************************************
-//ここまで
-//**************************************
+/**
+ * ライントレース制御
+ */
+extern void LDC_do_linetrace(void);
 
 #endif /* __LineDriveController_h__ */
