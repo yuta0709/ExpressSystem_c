@@ -13,4 +13,6 @@ APPL_COBJS += \
 	LuggageCarrierUnit.o \
 	MotorUnit.o \
 	TimerUnit.o \
-	WallMonitorUnit.o
+	WallMonitorUnit.o \
+	TurnleftController.o \
+	TurnrightController.o
