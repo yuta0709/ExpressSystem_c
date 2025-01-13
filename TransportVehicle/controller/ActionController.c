@@ -15,6 +15,7 @@
 #include "RequestwaitController.h"
 #include "CollectmoveController.h"
 #include "CarrywaitController.h"
+#include "CarryremindController.h"
 
 //**************************************
 //必要に応じて以下にプログラムを記述する
@@ -92,6 +93,7 @@ void AC_controllAction(void) {
             CWC_action();
             break;
         case AC_STATUS_CARRYREMIND:
+            CRC_action();
             break;
         case AC_STATUS_COLLECTTURN:
             break;

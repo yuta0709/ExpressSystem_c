@@ -3,6 +3,7 @@ APPL_COBJS += \
 	RequestwaitController.o \
 	CollectmoveController.o \
 	CarrywaitController.o \
+	CarryremindController.o \
 	DeliveryController.o \
 	LineDriveController.o \
 	ButtonUnit.o \
