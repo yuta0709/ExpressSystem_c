@@ -36,6 +36,27 @@ void AC_pre(void) {
     
     // ‰Šúó‘Ô‚Ö‘JˆÚ
     cur_state = AC_STATUS_REQUESTWAIT;
+
+    BU_pre();
+
+    LCU_pre();
+
+    LMU_pre();
+
+    WMU_pre();
+    WMU_set_threshold(10);
+
+    MU_pre();
+    MU_set_backwardSpeed(80);
+    MU_set_forwardSpeed(80);
+
+    DU_pre();
+    
+    HU_pre();
+    
+    
+    
+
 }
 
 /**

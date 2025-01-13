@@ -26,6 +26,7 @@
 #include "../unit/DisplayUnit.h"
 #include "../unit/HornUnit.h"
 #include "../unit/TimerUnit.h"
+#include "../unit/MotorUnit.h"
 
 // ó‘Ô‚ğ•\‚·—ñ‹“Œ^
 enum AC_STATUS {
