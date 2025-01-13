@@ -27,6 +27,23 @@
 #include "../unit/HornUnit.h"
 #include "../unit/TimerUnit.h"
 
+// 状態を表すenum型の定義
+enum AC_STATUS {
+    AC_STATUS_REQUESTWAIT,         
+    AC_STATUS_COLLECTMOVE,
+    AC_STATUS_CARRYWAIT,
+    AC_STATUS_CARRYREMIND,
+    AC_STATUS_COLLECTTURN,
+    AC_STATUS_DERIVER,
+    AC_STATUS_DROPBUGGAGE,
+    AC_STATUS_UNLOADWAIT,
+    AC_STATUS_UNLOADREMIND,
+    AC_STATUS_DERIVERTURN,
+    AC_STATUS_RETURN,
+};
+
+// 状態を変更するための関数
+extern void AC_changeStatus(enum AC_STATUS newStatus);
 
 /*
  * 行動制御の初期化処理
