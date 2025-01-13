@@ -25,6 +25,7 @@ void RWC_action(void) {
     // entry処理（状態が変化した時のみ実行）
     if (pre_state != AC_STATUS_REQUESTWAIT) {
         RWC_entry();
+        pre_state = cur_state;
     }
 
     // do処理（毎回実行）
