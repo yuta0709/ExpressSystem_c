@@ -18,5 +18,6 @@ APPL_COBJS += \
 	WallMonitorUnit.o \
 	TurnleftController.o \
 	TurnrightController.o \
-	UnloadwaitController.o
+	UnloadwaitController.o \
+	UnloadremindController.o
 

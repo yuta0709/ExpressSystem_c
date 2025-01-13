@@ -19,6 +19,7 @@
 #include "DeliveryController.h"
 #include "DropbuggageController.h"
 #include "UnloadwaitController.h"
+#include "UnloadremindController.h"
 
 // èÛë‘ïœêîÇÃíËã`
 enum AC_STATUS cur_state = AC_STATUS_NO;
@@ -79,6 +80,7 @@ void AC_controllAction(void) {
             UWC_action();
             break;
         case AC_STATUS_UNLOADREMIND:
+            URC_action();
             break;
         case AC_STATUS_DELIVERYTURN:
             break;
