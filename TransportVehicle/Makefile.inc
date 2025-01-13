@@ -19,5 +19,7 @@ APPL_COBJS += \
 	TurnleftController.o \
 	TurnrightController.o \
 	UnloadwaitController.o \
-	UnloadremindController.o
+	UnloadremindController.o \
+	ReturnController.o
+
 

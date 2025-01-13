@@ -20,6 +20,7 @@
 #include "DropbuggageController.h"
 #include "UnloadwaitController.h"
 #include "UnloadremindController.h"
+#include "ReturnController.h"
 
 // ó‘Ô•Ï”‚Ì’è‹`
 enum AC_STATUS cur_state = AC_STATUS_NO;
@@ -85,6 +86,7 @@ void AC_controllAction(void) {
         case AC_STATUS_DELIVERYTURN:
             break;
         case AC_STATUS_RETURN:
+            RTC_action();
             break;
     }
 }
