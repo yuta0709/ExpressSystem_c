@@ -1,5 +1,6 @@
 APPL_COBJS += \
 	ActionController.o \
+	RequestwaitController.o \
 	DeliveryController.o \
 	LineDriveController.o \
 	ButtonUnit.o \

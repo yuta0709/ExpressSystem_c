@@ -1,85 +1,87 @@
 /*
  * COPYRIGHT(c)2017 Afrel Co., Ltd.
  * ActionController.c
- * è¡Œå‹•åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
+ * s“®§ŒäƒNƒ‰ƒX
  *
- * ã‚¯ãƒ©ã‚¹å: ActionController(AC)
- * å±žæ€§:
- * æ“ä½œ: 
- * é–¢é€£: LineDriveController(LDC), DeliveryController(DU), LuggageCarrierUnit(LCU),
+ * ƒNƒ‰ƒX–¼: ActionController(AC)
+ * ‘®«:
+ * ‘€ì: 
+ * ŠÖ˜A: LineDriveController(LDC), DeliveryController(DU), LuggageCarrierUnit(LCU),
  *       BumperUnit(BU), DisplayUnit(DU), WallMonitorUnit(WMU), HornUnit(HU), TimerUnit(TU),
  *       common
  */
 
 #include "ActionController.h"
+#include "RequestwaitController.h"
 
 //**************************************
-//å¿…è¦ã«å¿œã˜ã¦ä»¥ä¸‹ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¨˜è¿°ã™ã‚‹
-//ã“ã“ã‹ã‚‰
+//•K—v‚É‰ž‚¶‚ÄˆÈ‰º‚ÉƒvƒƒOƒ‰ƒ€‚ð‹Lq‚·‚é
+//‚±‚±‚©‚ç
 //**************************************
 
-// çŠ¶æ…‹å¤‰æ•°ã®å®šç¾©
+// ó‘Ô•Ï”‚Ì’è‹`
 enum AC_STATUS cur_state = AC_STATUS_NO;
 enum AC_STATUS pre_state = AC_STATUS_NO;
 
 //**************************************
-//ã“ã“ã¾ã§
+//‚±‚±‚Ü‚Å
 //**************************************
 
 /**
- * è¡Œå‹•åˆ¶å¾¡ã®åˆæœŸåŒ–å‡¦ç†
+ * s“®§Œä‚Ì‰Šú‰»ˆ—
  */
 void AC_pre(void) {
 //**************************************
-//å¿…è¦ã«å¿œã˜ã¦ä»¥ä¸‹ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¨˜è¿°ã™ã‚‹
-//ã“ã“ã‹ã‚‰
+//•K—v‚É‰ž‚¶‚ÄˆÈ‰º‚ÉƒvƒƒOƒ‰ƒ€‚ð‹Lq‚·‚é
+//‚±‚±‚©‚ç
 //**************************************
 
-    // åˆæœŸçŠ¶æ…‹ã‚’è¨­å®šï¼ˆæœªå®šç¾©çŠ¶æ…‹ã‹ã‚‰é–‹å§‹ï¼‰
+    // ‰Šúó‘Ô‚ðÝ’èi–¢’è‹`ó‘Ô‚©‚çŠJŽnj
     pre_state = AC_STATUS_NO;
     cur_state = AC_STATUS_NO;
     
-    // åˆæœŸçŠ¶æ…‹ã¸é·ç§»
+    // ‰Šúó‘Ô‚Ö‘JˆÚ
     cur_state = AC_STATUS_REQUESTWAIT;
 
 //**************************************
-//ã“ã“ã¾ã§
+//‚±‚±‚Ü‚Å
 //**************************************
 }
 
 /**
- * è¡Œå‹•åˆ¶å¾¡ã®çµ‚äº†å‡¦ç†
+ * s“®§Œä‚ÌI—¹ˆ—
  */
 void AC_post(void) {
 //**************************************
-//å¿…è¦ã«å¿œã˜ã¦ä»¥ä¸‹ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¨˜è¿°ã™ã‚‹
-//ã“ã“ã‹ã‚‰
+//•K—v‚É‰ž‚¶‚ÄˆÈ‰º‚ÉƒvƒƒOƒ‰ƒ€‚ð‹Lq‚·‚é
+//‚±‚±‚©‚ç
 //**************************************
 
-    // å¿…è¦ã«å¿œã˜ã¦çµ‚äº†å‡¦ç†ã‚’å®Ÿè£…
+    // •K—v‚É‰ž‚¶‚ÄI—¹ˆ—‚ðŽÀ‘•
 
 //**************************************
-//ã“ã“ã¾ã§
+//‚±‚±‚Ü‚Å
 //**************************************
 }
 
 /**
- * è¡Œå‹•åˆ¶å¾¡
+ * s“®§Œä
  */
 void AC_controllAction(void) {
 //**************************************
-//å¿…è¦ã«å¿œã˜ã¦ä»¥ä¸‹ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’è¨˜è¿°ã™ã‚‹
-//ã“ã“ã‹ã‚‰
+//•K—v‚É‰ž‚¶‚ÄˆÈ‰º‚ÉƒvƒƒOƒ‰ƒ€‚ð‹Lq‚·‚é
+//‚±‚±‚©‚ç
 //**************************************
 
-    /* ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’è¡¨ç¤º */
+    /* Œ»Ý‚ÌƒXƒe[ƒ^ƒX‚ð•\Ž¦ */
     DU_showNumber(cur_state);
 
-    /* çŠ¶æ…‹ã«å¿œã˜ãŸå‡¦ç†ã®å®Ÿè¡Œ */
+    /* ó‘Ô‚É‰ž‚¶‚½ˆ—‚ÌŽÀs */
     switch (cur_state) {
         case AC_STATUS_NO:
             break;
         case AC_STATUS_REQUESTWAIT:
+            requestwait_action();
             break;
         case AC_STATUS_COLLECTMOVE:
             break;
@@ -104,6 +106,6 @@ void AC_controllAction(void) {
     }
 
 //**************************************
-//ã“ã“ã¾ã§
+//‚±‚±‚Ü‚Å
 //**************************************
 }
