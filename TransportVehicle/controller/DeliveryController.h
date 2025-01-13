@@ -1,33 +1,29 @@
 /*
- * COPYRIGHT(c)2017 Afrel Co., Ltd.
  * DeliveryController.h
- * 集配管理クラス
+ * 配達制御クラス
  *
- * クラス名: DeliveryController(DC)
- * 属性:
- * 操作:
- * 関連: LineMonitorUnit(LMU), common
+ * クラス名: DeliveryController(DLC)
+ * 属性: なし
+ * 操作: action
+ * 関連: MotorUnit(MU), LineMonitorUnit(LMU), LuggageCarrierUnit(LCU), HornUnit(HU), LineDriveController(LDC), common
  */
 
-#ifndef __DeliveryController_h__
-#define __DeliveryController_h__
+#ifndef DELIVERY_CONTROLLER_H
+#define DELIVERY_CONTROLLER_H
 
-//com
 #include "../com/common.h"
-//unit
+#include "../unit/MotorUnit.h"
 #include "../unit/LineMonitorUnit.h"
+#include "../unit/LuggageCarrierUnit.h"
+#include "../unit/HornUnit.h"
+#include "LineDriveController.h"
 
-//**************************************
-//必要に応じて以下にプログラムを記述する
-//ここから
-//**************************************
+// 配達先の色を示す変数の宣言
+extern int target_color;
 
+/**
+ * 配達制御
+ */
+extern void DLC_action(void);
 
-
-
-
-//**************************************
-//ここまで
-//**************************************
-
-#endif /*__DeliveryController_h__*/
+#endif

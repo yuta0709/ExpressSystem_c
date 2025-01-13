@@ -43,7 +43,7 @@ static void CTC_do_action(void) {
     
     // 状態を配達中に移す
     CTC_exit();
-    cur_state = AC_STATUS_DERIVER;
+    cur_state = AC_STATUS_DELIVERY;
 }
 
 /**
