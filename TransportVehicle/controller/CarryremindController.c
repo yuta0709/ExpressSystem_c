@@ -10,14 +10,12 @@
  */
 
 #include "CarryremindController.h"
+#include "DeliveryController.h"
 
 // 内部関数のプロトタイプ宣言
 static void CRC_entry(void);
 static void CRC_do(void);
 static void CRC_exit(void);
-
-// 配達先を保持する変数
-static int destination = 0;
 
 /**
  * 荷物積載催促状態の制御
@@ -35,7 +33,7 @@ void CRC_action(void) {
     // 荷台に荷物が置かれた場合
     if (LCU_isLoaded()) {
         // カラーセンサの値を配達先として設定
-        destination = LMU_get_color();
+        target_color = LMU_get_color();
         // 後退する
         MU_backward();
         // 状態を収集後反転中に遷移

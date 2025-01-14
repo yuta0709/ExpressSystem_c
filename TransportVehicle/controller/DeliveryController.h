@@ -18,7 +18,7 @@
 #include "../unit/HornUnit.h"
 #include "LineDriveController.h"
 
-// 配達先の色を示す変数の宣言
+// 配達先の色を示す変数
 extern int target_color;
 
 /**
