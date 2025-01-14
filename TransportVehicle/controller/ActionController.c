@@ -42,13 +42,14 @@ void AC_pre(void) {
     LCU_pre();
 
     LMU_pre();
+    LMU_set_threshold(80);
 
     WMU_pre();
-    WMU_set_threshold(10);
+    WMU_set_threshold(2);
 
     MU_pre();
-    MU_set_backwardSpeed(80);
-    MU_set_forwardSpeed(80);
+    MU_set_backwardSpeed(-10);
+    MU_set_forwardSpeed(10);
 
     DU_pre();
     

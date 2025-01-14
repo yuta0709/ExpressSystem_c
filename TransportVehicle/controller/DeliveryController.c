@@ -49,7 +49,7 @@ static void DLC_do_action(void) {
         // ‰×‘ä‚ª‰Ÿ‚³‚ê‚Ä‚¢‚È‚¢ê‡
         MU_stop();
         DLC_exit();
-        cur_state = AC_STATUS_UNLOADWAIT;
+        cur_state = AC_STATUS_DROPBUGGAGE;
         return;
     }
 
@@ -65,7 +65,7 @@ static void DLC_do_action(void) {
         
         // ó‘Ô‚ğ‰×~‚ë‚µ‘Ò‹@‚ÉˆÚ‚·
         DLC_exit();
-        cur_state = AC_STATUS_DROPBUGGAGE;
+        cur_state = AC_STATUS_UNLOADWAIT;
     }
 }
 

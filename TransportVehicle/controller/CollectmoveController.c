@@ -23,6 +23,7 @@ void CMC_action(void) {
     // entry処理（状態が変化した時のみ実行）
     if (pre_state != AC_STATUS_COLLECTMOVE) {
         CMC_entry();
+        pre_state = cur_state; 
     }
 
     // do処理（毎回実行）
@@ -35,7 +36,6 @@ void CMC_action(void) {
         // 到着音を鳴らす
         HU_arrivalSound();
         // 状態を荷物積載待機に遷移
-        pre_state = cur_state;
         cur_state = AC_STATUS_CARRYWAIT;
     }
 

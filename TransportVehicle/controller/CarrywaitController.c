@@ -39,12 +39,15 @@ void CWC_action(void) {
     // 荷台に荷物が置かれた場合
     if (LCU_isLoaded()) {
         // カラーセンサの値を配達先として設定
+
         target_color = LMU_get_color();
-        // 後退する
-        MU_backward();
-        // 状態を収集後反転中に遷移
-        pre_state = cur_state;
-        cur_state = AC_STATUS_COLLECTTURN;
+        if(target_color == 2 || target_color == 4 || target_color == 5) {
+            // 後退する
+            MU_backward();
+            // 状態を収集後反転中に遷移
+            pre_state = cur_state;
+            cur_state = AC_STATUS_COLLECTTURN;
+        }
     }
 
     // 状態が変化した場合のexit処理
