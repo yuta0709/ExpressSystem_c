@@ -24,7 +24,7 @@ enum AC_STATUS {
     AC_STATUS_CARRYWAIT,
     AC_STATUS_CARRYREMIND,
     AC_STATUS_COLLECTTURN,
-    AC_STATUS_DERIVER,
+    AC_STATUS_DELIVER,
     AC_STATUS_DROPBUGGAGE,
     AC_STATUS_UNLOADWAIT,
     AC_STATUS_UNLOADREMIND,
@@ -47,7 +47,6 @@ void AC_pre(void) {
 //必要に応じて以下にプログラムを記述する
 //ここから
 //**************************************
-
 
 
 
@@ -88,7 +87,15 @@ void AC_controllAction(void) {
 //ここから
 //**************************************
 
+    /* 現在のステータスを表示 */
+	DU_showNumber(AC_currentStatus);　//AC_currentStatusは状態を表す変数（AC_STATUS)
 
+    switch (AC_currentStatus) {
+            case AC_STATUS_REQUESTWAIT:
+                AC_request_wait();
+                break;
+        //他の状態も記述
+    }
 
 
 

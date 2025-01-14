@@ -29,17 +29,17 @@
 
 
 /*
- * s“®§Œä‚Ì‰Šú‰»ˆ—
+ * ??????????ˆ—
  */
 extern void AC_pre(void);
 
 /*
- * s“®§Œä‚ÌI—¹ˆ—
+ * ?????????ˆ—
  */
 extern void AC_post(void);
 
 /**
- * s“®§Œä
+ * ????
  */
 extern void AC_controllAction(void);
 

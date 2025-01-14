@@ -16,6 +16,18 @@
 //‚±‚±‚©‚ç
 //**************************************
 
+void C_LineDrive(void){
+    //ƒ‰ƒCƒ“‚ÌŠÄ‹ó‘Ô‚Ìæ“¾
+    line_status = LMU_isOnLine();
+
+    //–¾‚é‚©‚Á‚½‚ç‰E‚É‹È‚ª‚é/ˆÃ‚©‚Á‚½‚ç¶‚É‹È‚ª‚é
+    if(line_status == 0){
+        MU_pivotRight();
+    }else{
+        MU_pivotLeft();
+    }
+}
+
 
 
 
