@@ -20,6 +20,7 @@ APPL_COBJS += \
 	TurnrightController.o \
 	UnloadwaitController.o \
 	UnloadremindController.o \
-	ReturnController.o
+	ReturnController.o \
+	DeliveryTurnController.o
 
 

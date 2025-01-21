@@ -20,6 +20,7 @@
 #include "DropbuggageController.h"
 #include "UnloadwaitController.h"
 #include "UnloadremindController.h"
+#include "DeliveryTurnController.h"
 #include "ReturnController.h"
 
 // èÛë‘ïœêîÇÃíËã`
@@ -42,10 +43,10 @@ void AC_pre(void) {
     LCU_pre();
 
     LMU_pre();
-    LMU_set_threshold(80);
+    LMU_set_threshold(10);
 
     WMU_pre();
-    WMU_set_threshold(2);
+    WMU_set_threshold(10);
 
     MU_pre();
     MU_set_backwardSpeed(-10);
@@ -106,6 +107,7 @@ void AC_controllAction(void) {
             URC_action();
             break;
         case AC_STATUS_DELIVERYTURN:
+            DTC_action();
             break;
         case AC_STATUS_RETURN:
             RTC_action();

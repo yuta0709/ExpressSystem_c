@@ -50,9 +50,6 @@ static void UWC_do_action(void) {
 
     // 荷台の状態を示す
     if (LCU_isLoaded()) {
-        // 荷台が押されている場合
-        TU_finish();
-        UWC_exit();
         return;
     }
 
