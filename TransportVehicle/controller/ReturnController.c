@@ -11,7 +11,7 @@
 #include "ReturnController.h"
 #include "ActionController.h"
 
-#define STANDBY_COLOR COLOR_GREEN
+#define STANDBY_COLOR 3
 
 static void RTC_entry(void);
 static void RTC_do_action(void);
@@ -47,10 +47,10 @@ static void RTC_do_action(void) {
     int current_color = LMU_get_color();
     
     // 待機場所の色を検知した場合
-    if (current_color == STANDBY_COLOR) {
+    if (current_color == 3) {
+        MU_stop();
         cur_state = AC_STATUS_REQUESTWAIT;
         // 停止する
-        MU_stop();
         RTC_exit();
     }
 }

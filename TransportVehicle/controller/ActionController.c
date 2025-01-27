@@ -43,14 +43,14 @@ void AC_pre(void) {
     LCU_pre();
 
     LMU_pre();
-    LMU_set_threshold(10);
+    LMU_set_threshold(30);
 
     WMU_pre();
     WMU_set_threshold(10);
 
     MU_pre();
-    MU_set_backwardSpeed(-10);
-    MU_set_forwardSpeed(10);
+    MU_set_backwardSpeed(-30);
+    MU_set_forwardSpeed(30);
 
     DU_pre();
     
@@ -73,7 +73,7 @@ void AC_post(void) {
  */
 void AC_controllAction(void) {
     /* 現在のステータスを表示 */
-    DU_showNumber(cur_state);
+    // DU_showNumber(cur_state);
 
     /* 状態に応じた処理の実行 */
     switch (cur_state) {

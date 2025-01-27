@@ -9,6 +9,7 @@
  */
 
 #include "RequestwaitController.h"
+#include "../unit/WallMonitorUnit.h"
 
 // 内部関数のプロトタイプ宣言
 static void RWC_entry(void);
@@ -26,6 +27,12 @@ void RWC_action(void) {
     if (pre_state != AC_STATUS_REQUESTWAIT) {
         RWC_entry();
         pre_state = cur_state;
+    }
+
+    if (WMU_isNear()){
+        DU_showString("Near");
+    }else{
+        DU_showString("Far");
     }
 
     // do処理（毎回実行）

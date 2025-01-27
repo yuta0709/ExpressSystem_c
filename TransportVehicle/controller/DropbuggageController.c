@@ -38,7 +38,7 @@ static void DBC_entry(void) {
  * 実処理
  */
 static void DBC_do_action(void) {
-    HU_confirmSound();
+    HU_warnSound();
     // 荷台の状態を示す
     if (LCU_isLoaded()) {
         // 荷台が押されている場合は状態を変更

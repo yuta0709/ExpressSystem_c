@@ -54,14 +54,14 @@ void CRC_action(void) {
  * 荷物積載催促状態のentry処理
  */
 static void CRC_entry(void) {
-    // 確認音を鳴らす
-    HU_confirmSound();
+    
 }
 
 /**
  * 荷物積載催促状態のdo処理
  */
 static void CRC_do(void) {
+    HU_confirmSound();
 }
 
 /**
