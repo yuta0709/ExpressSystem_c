@@ -21,6 +21,7 @@
 #include "../unit/LuggageCarrierUnit.h"
 #include "../unit/LineMonitorUnit.h"
 #include "../unit/MotorUnit.h"
+#include "../unit/TimerUnit.h"
 
 /*
  * 荷物積載催促状態の制御

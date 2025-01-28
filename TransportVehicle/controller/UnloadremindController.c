@@ -41,7 +41,7 @@ static void URC_do_action(void) {
     // 確認音を鳴らす
     HU_confirmSound();
     // 荷台の状態を示す
-    if (LCU_isLoaded()) {
+    if (!LCU_isLoaded()) {
         URC_exit();
         cur_state = AC_STATUS_DELIVERYTURN;
     }

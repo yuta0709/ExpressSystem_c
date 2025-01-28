@@ -1,11 +1,11 @@
 /*
  * ActionController.c
- * s“®§ŒäƒNƒ‰ƒX
+ * ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½X
  *
- * ƒNƒ‰ƒX–¼: ActionController(AC)
- * ‘®«: ‚È‚µ
- * ‘€ì: pre, post, controllAction
- * ŠÖ˜A: LineDriveController(LDC), DeliveryController(DLC), LuggageCarrierUnit(LCU),
+ * ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½: ActionController(AC)
+ * ï¿½ï¿½ï¿½ï¿½: ï¿½È‚ï¿½
+ * ï¿½ï¿½ï¿½ï¿½: pre, post, controllAction
+ * ï¿½Ö˜A: LineDriveController(LDC), DeliveryController(DLC), LuggageCarrierUnit(LCU),
  *       BumperUnit(BU), DisplayUnit(DU), WallMonitorUnit(WMU), HornUnit(HU), TimerUnit(TU),
  *       common
  */
@@ -23,19 +23,19 @@
 #include "DeliveryTurnController.h"
 #include "ReturnController.h"
 
-// ó‘Ô•Ï”‚Ì’è‹`
+// ï¿½ï¿½Ô•Ïï¿½ï¿½Ì’ï¿½`
 enum AC_STATUS cur_state = AC_STATUS_NO;
 enum AC_STATUS pre_state = AC_STATUS_NO;
 
 /**
- * s“®§Œä‚Ì‰Šú‰»ˆ—
+ * ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 void AC_pre(void) {
-    // ‰Šúó‘Ô‚ğİ’èi–¢’è‹`ó‘Ô‚©‚çŠJnj
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½İ’ï¿½iï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½Ô‚ï¿½ï¿½ï¿½Jï¿½nï¿½j
     pre_state = AC_STATUS_NO;
     cur_state = AC_STATUS_NO;
     
-    // ‰Šúó‘Ô‚Ö‘JˆÚ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚Ö‘Jï¿½ï¿½
     cur_state = AC_STATUS_REQUESTWAIT;
 
     BU_pre();
@@ -62,20 +62,20 @@ void AC_pre(void) {
 }
 
 /**
- * s“®§Œä‚ÌI—¹ˆ—
+ * ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 void AC_post(void) {
-    // •K—v‚É‰‚¶‚ÄI—¹ˆ—‚ğÀ‘•
+    // ï¿½Kï¿½vï¿½É‰ï¿½ï¿½ï¿½ï¿½ÄIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }
 
 /**
- * s“®§Œä
+ * ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 void AC_controllAction(void) {
-    /* Œ»İ‚ÌƒXƒe[ƒ^ƒX‚ğ•\¦ */
-    // DU_showNumber(cur_state);
+    /* ï¿½ï¿½ï¿½İ‚ÌƒXï¿½eï¿½[ï¿½^ï¿½Xï¿½ï¿½\ï¿½ï¿½ */
+    DU_showNumber(cur_state);
 
-    /* ó‘Ô‚É‰‚¶‚½ˆ—‚ÌÀs */
+    /* ï¿½ï¿½Ô‚É‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½s */
     switch (cur_state) {
         case AC_STATUS_NO:
             break;

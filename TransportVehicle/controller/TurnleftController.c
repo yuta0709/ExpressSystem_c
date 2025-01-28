@@ -19,7 +19,7 @@ void TLC_do_turnleft(void) {
     MU_turnRight();
     
     // 一定時間スリープする（1秒）
-    TU_start(300);
+    TU_start(700);
     while (!TU_isTimeout()) {
         // タイムアウトまで待機
     }

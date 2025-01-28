@@ -38,6 +38,12 @@ void CRC_action(void) {
         if(target_color == 2 || target_color == 4 || target_color == 5) {
             // 後退する
             MU_backward();
+            MU_backward();
+            TU_start(600);
+            while (!TU_isTimeout()) {
+                // タイムアウトまで待機
+            }
+            TU_finish();
             // 状態を収集後反転中に遷移
             pre_state = cur_state;
             cur_state = AC_STATUS_COLLECTTURN;

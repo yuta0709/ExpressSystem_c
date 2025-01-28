@@ -29,12 +29,6 @@ void RWC_action(void) {
         pre_state = cur_state;
     }
 
-    if (WMU_isNear()){
-        DU_showString("Near");
-    }else{
-        DU_showString("Far");
-    }
-
     // do処理（毎回実行）
     RWC_do();
 
